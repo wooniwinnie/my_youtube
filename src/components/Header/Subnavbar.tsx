@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Videocards from '../Section/Videocards';
 
 // 배열 제네릭
 type SubMenu = Array<{
@@ -10,13 +11,16 @@ type SubMenu = Array<{
 const Subnavbar = () => {
     const [subMenu, setSubMenu] = useState<SubMenu>(initialValue);
     return (
-        <ul className='flex px-24 mt-5'>
-            {subMenu.map((m) => (
-                <button className='px-6' key={m.id}>
-                    {m.text}
-                </button>
-            ))}
-        </ul>
+        <>
+            <ul className='flex px-24 mt-5'>
+                {subMenu.map((m) => (
+                    <button className='px-6' key={m.id}>
+                        {m.text}
+                    </button>
+                ))}
+            </ul>
+            <Videocards />
+        </>
     );
 };
 
