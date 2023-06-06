@@ -63,15 +63,20 @@ const Videocards = (): JSX.Element => {
     }, []);
 
     return (
-        <div>
+        <div className='w-screen mt-20'>
             {data.map((item) => (
                 <div>
-                    <img
-                        src='https://images.unsplash.com/photo-1686007579079-550a74a0decb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60'
-                        alt=''
-                    />
-                    <h3>{item.snippet.title}</h3>
-                    <p>{item.snippet.channelTitle}</p>
+                    <button>
+                        <img
+                            style={{
+                                width: item.snippet.thumbnails.medium.width,
+                            }}
+                            src={item.snippet.thumbnails.default.url}
+                            alt=''
+                        />
+                        <h3>{item.snippet.title}</h3>
+                        <p>{item.snippet.channelTitle}</p>
+                    </button>
                 </div>
             ))}
         </div>
